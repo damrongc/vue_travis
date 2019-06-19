@@ -1,23 +1,19 @@
 language: node_js
 node_js:
-  - "6.9"
+- '6.9'
 branches:
   only:
-  - master # auto build and deploy in only master branch
+  - master
 install:
-  - npm install -g firebase-tools # install firebase-cli
-  - yarn
-
+- npm install -g firebase-tools
+- yarn
 script:
-  - yarn build
-
+- yarn build
 deploy:
   skip_cleanup: true
   provider: firebase
   token:
-    secure: "1/nWWMMYU3IeupQjr_N21C6x_k6px5dp0ltmGuTNRZas4"
-# after_success:
-#   - firebase deploy --token $FIREBASE_TOKEN --non-interactive
-# - firebase use --token ${FIREBASE_TOKEN} # set firebase token
-# - firebase use --add ${PROJECT_ID} # set current project
-# - firebase deploy --non-interactive --token "${FIREBASE_TOKEN}" # deploy project
+    secure: 1/nWWMMYU3IeupQjr_N21C6x_k6px5dp0ltmGuTNRZas4
+env:
+  global:
+    secure: vGKWeI8hQB6aZ7H5rLioqq8uBvnEaR1JuPN05rJROzcKVjUHti1NtNL7yDZa1mxdMdYiNgc5OYMbh0h9N+96tZLh8qUGryBE/bBxkETPfus1biXiSw0OkZcARvF2egx3ogBAUvxwIHNYjS5EypfwQG/aa8HO5vEktnyA48K5oRpipG/MIIHZm8tP5/woI00o2y7arokL1DObYspWLk0TBba/6p82px+xjcyRr7G4Caj4ABrWTReVNs2h8+zP2cB8mr3smM458+s42QLe8/EITP4ve3oYDZ1Rgnt36o3BifAUdhKjasDxWyQT5furd+gqDzOH9+WsmR7sNOF1nNqMbpSJfauUutpvqw7gGcHlGAxxj9zvO6pGtfPIIsBOa1r8ozutn5qy4CzebxFMo07CBvMQ3AeXik7K8sdHpmoQGQyGbtPL/uTDdp+8wA9BzkDtaSYWja1116aGDzZTNOZu/1k+U5YaLl2eUjyLrvwx6E8oUs0aXPKQ0h7ttczviFPsx42DFz7JgFueXEEYv0DoLFADmrbTswV2pVvDbVdXyk9JJYLv7jDtsLSkXDiN4BTHt5ZdG2BCqfqC80KJXVniMwLFEYFb0Z0Hxtgc56o+8KDz3pKHG34PRityFXLL4KSKsqqncAw2eAZJ5ETQTn3qANUCJNwe9phSKwG9JokbpfE=
