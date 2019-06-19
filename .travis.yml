@@ -10,8 +10,14 @@ install:
 
 script:
   - yarn build
-after_success:
-  - firebase deploy --token $FIREBASE_TOKEN --non-interactive
+
+deploy:
+  skip_cleanup: true
+  provider: firebase
+  token:
+    secure: "1/nWWMMYU3IeupQjr_N21C6x_k6px5dp0ltmGuTNRZas4"
+# after_success:
+#   - firebase deploy --token $FIREBASE_TOKEN --non-interactive
 # - firebase use --token ${FIREBASE_TOKEN} # set firebase token
 # - firebase use --add ${PROJECT_ID} # set current project
 # - firebase deploy --non-interactive --token "${FIREBASE_TOKEN}" # deploy project
